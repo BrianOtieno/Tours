@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "901216158516",
+    "project_id": "tour-guide-faeef",
+    "storage_bucket": "tour-guide-faeef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901216158516:android:ff57184cb0ac4899ba5b61",
+        "android_client_info": {
+          "package_name": "com.royalai.tourguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901216158516-m3iilcem8o2ngfc1hkja0euhqsg4cknr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.royalai.tourguide",
+            "certificate_hash": "8ca3df81d1e2df25abe9b887fc27929d58f1b4ad"
+          }
+        },
+        {
+          "client_id": "901216158516-8hpd7lll2nnqdlvrlk31ejol5svvrsue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxyU43lt1hJlAUu2tEQ--fWBWHTkyjDZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901216158516-8hpd7lll2nnqdlvrlk31ejol5svvrsue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
