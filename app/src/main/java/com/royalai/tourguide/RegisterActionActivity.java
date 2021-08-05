@@ -16,10 +16,14 @@ public class RegisterActionActivity extends AppCompatActivity {
 
     public void registerTourist(View view) {
         startActivity(new Intent(this, TouristResigterActivity.class));
+        finish();
+        return;
     }
 
     public void registerGuide(View view) {
         startActivity(new Intent(this,TourGuideRegisterActivity.class));
+        finish();
+        return;
     }
 
 }

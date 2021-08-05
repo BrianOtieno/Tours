@@ -28,13 +28,11 @@
         android:fontFamily="@font/allura"
         android:text="@string/app_tour_guide_tag"
         android:textColor="#C1F8B0B0"
-        android:textSize="55dp"
+        android:textSize="45dp"
         android:textStyle="bold" />
 
-
-
     <EditText
-        android:id="@+id/emailRegister"
+        android:id="@+id/tourGuideRegisterEmail"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_alignBottom="@+id/textView"
@@ -50,10 +48,10 @@
         android:textSize="16dp" />
 
     <EditText
-        android:id="@+id/passwordRegister"
+        android:id="@+id/passwordTGRegister"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/emailRegister"
+        android:layout_alignBottom="@+id/tourGuideRegisterEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:layout_marginBottom="-50dp"
@@ -66,10 +64,10 @@
         android:textColorHint="#ffff" />
 
     <EditText
-        android:id="@+id/confirmPassword"
+        android:id="@+id/confirmTGPassword"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/passwordRegister"
+        android:layout_alignBottom="@+id/passwordTGRegister"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:layout_marginBottom="-50dp"
@@ -81,10 +79,10 @@
         android:textColor="#fff"
         android:textColorHint="#ffff" />
     <Button
-        android:id="@+id/button_register"
+        android:id="@+id/tour_guide_register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/confirmPassword"
+        android:layout_alignBottom="@+id/confirmTGPassword"
         android:layout_centerInParent="true"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="-71dp"
@@ -95,7 +93,7 @@
         android:textSize="20dp" />
 
     <ProgressBar
-        android:id="@+id/progressbar"
+        android:id="@+id/tour_guide_register_progressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

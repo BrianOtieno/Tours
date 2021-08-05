@@ -32,7 +32,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/emailRegister"
+        android:id="@+id/touristRegisterEmail"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_alignBottom="@+id/textView"
@@ -48,10 +48,10 @@
         android:textSize="16dp" />
 
     <EditText
-        android:id="@+id/passwordRegister"
+        android:id="@+id/passwordTRegister"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/emailRegister"
+        android:layout_alignBottom="@+id/touristRegisterEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:layout_marginBottom="-50dp"
@@ -64,10 +64,10 @@
         android:textColorHint="#ffff" />
 
     <EditText
-        android:id="@+id/confirmPassword"
+        android:id="@+id/confirmTPassword"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/passwordRegister"
+        android:layout_alignBottom="@+id/passwordTRegister"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:layout_marginBottom="-50dp"
@@ -79,10 +79,10 @@
         android:textColor="#fff"
         android:textColorHint="#ffff" />
     <Button
-        android:id="@+id/button_register"
+        android:id="@+id/tourist_register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/confirmPassword"
+        android:layout_alignBottom="@+id/confirmTPassword"
         android:layout_centerInParent="true"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="-71dp"
@@ -93,7 +93,7 @@
         android:textSize="20dp" />
 
     <ProgressBar
-        android:id="@+id/progressbar"
+        android:id="@+id/tprogressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
