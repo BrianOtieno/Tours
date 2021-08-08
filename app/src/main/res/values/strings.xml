@@ -5,4 +5,5 @@
     <string name="app_tour_guide_tag">Tour Guide</string>
     <string name="app_tourist_tag">Tourist</string>
     <string name="title_activity_tourist_maps">Map</string>
+    <string name="title_activity_tour_guide_maps">Map</string>
 </resources>

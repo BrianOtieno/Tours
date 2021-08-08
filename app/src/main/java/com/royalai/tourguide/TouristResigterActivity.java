@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -18,8 +19,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class TouristResigterActivity extends AppCompatActivity {
     private Button mTouristRegisterButton;
@@ -33,7 +37,41 @@ public class TouristResigterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+//                    startActivity(new Intent(getApplicationContext(), TourGuideMapsActivity.class));
+//                    finish();
+//                    return;
+
+            String user_id = mAuth.getInstance().getCurrentUser().getUid();
+            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
+            mDatabase.child("Users")
+                    .child("Guides")
+                    .child(user_id) // Create a reference to the child node directly
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            // This callback will fire even if the node doesn't exist, so now check for existence
+                            if (dataSnapshot.exists()) {
+                                startActivity(new Intent(TouristResigterActivity.this, TourGuideMapsActivity.class));
+                            } else {
+                                startActivity(new Intent(TouristResigterActivity.this, TouristMapsActivity.class));
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) { }
+                    });
+
+        }
+
         setContentView(R.layout.activity_tourist_resigter);
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.purple_700));
+        }
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -42,7 +80,7 @@ public class TouristResigterActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if(user != null){
-                    startActivity(new Intent(getApplicationContext(), TouristDashboardActivity.class));
+                    startActivity(new Intent(getApplicationContext(), TouristMapsActivity.class));
                     finish();
                     return;
                 }
@@ -105,6 +143,10 @@ public class TouristResigterActivity extends AppCompatActivity {
                                             .child("Tourists")
                                             .child(user_id);
                                     user_db.setValue(true);
+                                    mProgressBar.setVisibility(View.GONE);
+                                    startActivity(new Intent(getApplicationContext(), TouristMapsActivity.class));
+                                    finish();
+                                    return;
                                 }
                             }
                         });
